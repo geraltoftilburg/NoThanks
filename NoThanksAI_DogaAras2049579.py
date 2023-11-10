@@ -13,6 +13,11 @@ class MyAI(Player):
         #If a player does not have coins, they must take the card. 
         if self.coins <= 0:
             return True
+        
+        #A player should take the card if it connects with any card in the collection. 
+        for c in self.collection:
+             if c.number == card.number - 1 or c.number == card.number + 1:
+                 return True 
 
         #Calculate Pentaly 
         penalty_with_card = self.penaltyWhenTake(card)
@@ -23,11 +28,6 @@ class MyAI(Player):
         if penalty_with_card < self.penalty():
             return True
 
-        #A player should take the card if it connects with any card in the collection. 
-        for c in self.collection:
-             if c.number == card.number - 1 or c.number == card.number + 1:
-                 return True 
-             
         #The player will take the card if it has 3 or more coins and its number is 20 or less. 
         if card.coins >= 3 and card.number <= 20:
             return True
