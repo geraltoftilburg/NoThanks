@@ -11,7 +11,7 @@ from NoThanksState import State
 # Handy functions for the players.
 
 DEFAULTLENGTH = 1000
-DEFAULTAIS = ["NoThanksBeginners", "MyAI"]
+DEFAULTAIS = ["NoThanksBeginners", "NoThanksAI_DogaAras2049579"]
 
 MAXPLAYERS = 5
 DOTDISPLAY = min( max( int( DEFAULTLENGTH / 10 ), 1 ), 1000 )
